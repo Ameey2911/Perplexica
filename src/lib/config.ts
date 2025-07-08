@@ -23,6 +23,9 @@ interface Config {
     GROQ: {
       API_KEY: string;
     };
+    MISTRAL: {
+      API_KEY: string;
+    }
     ANTHROPIC: {
       API_KEY: string;
     };
@@ -73,6 +76,8 @@ export const getKeepAlive = () => loadConfig().GENERAL.KEEP_ALIVE;
 export const getOpenaiApiKey = () => loadConfig().MODELS.OPENAI.API_KEY;
 
 export const getGroqApiKey = () => loadConfig().MODELS.GROQ.API_KEY;
+
+export const getMistralApiKey = () => loadConfig().MODELS.MISTRAL.API_KEY;
 
 export const getAnthropicApiKey = () => loadConfig().MODELS.ANTHROPIC.API_KEY;
 

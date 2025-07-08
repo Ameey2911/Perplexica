@@ -19,6 +19,10 @@ import {
 } from './ollama';
 import { loadGroqChatModels, PROVIDER_INFO as GroqInfo } from './groq';
 import {
+  loadMistralChatModels,
+  PROVIDER_INFO as MistralInfo,
+} from './mistral';
+import {
   loadAnthropicChatModels,
   PROVIDER_INFO as AnthropicInfo,
 } from './anthropic';
@@ -50,6 +54,7 @@ export const PROVIDER_METADATA = {
   transformers: TransformersInfo,
   deepseek: DeepseekInfo,
   lmstudio: LMStudioInfo,
+  mistral: MistralInfo,
   custom_openai: {
     key: 'custom_openai',
     displayName: 'Custom OpenAI',
@@ -77,6 +82,7 @@ export const chatModelProviders: Record<
   gemini: loadGeminiChatModels,
   deepseek: loadDeepseekChatModels,
   lmstudio: loadLMStudioChatModels,
+  mistral: loadMistralChatModels,
 };
 
 export const embeddingModelProviders: Record<

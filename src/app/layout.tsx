@@ -14,9 +14,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Perplexica - Chat with the internet',
-  description:
-    'Perplexica is an AI powered chatbot that is connected to the internet.',
+  title: 'BrainPlex AI',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html className="h-full" lang="en" suppressHydrationWarning>
-      <body className={cn('h-full', montserrat.className)}>
+      <body className={cn('h-full relative', montserrat.className)}>
         <ThemeProvider>
+          {/* BrainPlex AI Logo */}
+          <div className="absolute top-4 right-4 z-50">
+            <img
+              src="/logo.png"
+              alt="BrainPlex AI Logo"
+              className="h-20 w-auto"
+            />
+          </div>
+
           <Sidebar>{children}</Sidebar>
+
           <Toaster
             toastOptions={{
               unstyled: true,
@@ -40,6 +51,6 @@ export default function RootLayout({
           />
         </ThemeProvider>
       </body>
-    </html>
-  );
+    </html>
+  );
 }
